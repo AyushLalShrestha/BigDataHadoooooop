@@ -1,0 +1,12 @@
+1. start master-node by ->  /sbin/start-master.sh
+
+2. then add a worker-node by ->  localhost:8080
+													-> view available worker-node address
+													-> /bin/spark-class org.spark.deploy.worker.Worker spark://<master url from localhost:8080>
+
+3. Run a custom python apache program, for eg.
+				-> bin/spark-submit --master spark://<master url>  --packages   com.databricks:spark-csv_2.10:1.3.0    uberstats.py   Uber-Jan.csv
+				
+# Extra Commands to setup clusters:
+					-> pyspark --master=local[*]   #Setting up local cores as master
+					

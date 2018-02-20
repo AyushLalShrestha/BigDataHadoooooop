@@ -1,0 +1,11 @@
+https://www.supergloo.com/fieldnotes/spark-sql-mysql-python-example-jdbc/
+
+step 1:  $SPARK_HOME/bin/pyspark  –jars mysql-connector-java-5.1.38-bin.jar
+
+step 2: dataframe_mysql = sqlContext.read.format("jdbc").option("url", "jdbc:mysql://localhost:3308/citizenims").option("driver", "com.mysql.jdbc.Driver").option("dbtable", "admins").option("user", "root").option("password", "root").load()
+
+step 3:  dataframe_mysql.show()
+
+step 4: dataframe_mysql.registerTempTable("admins")
+
+step 5: sqlContext.sql("select * from admins where username like '%2512%'").show()

@@ -1,0 +1,51 @@
+from:  http://hadoopsupport.blogspot.com/2016/05/install-apache-spark-on-windows-10.html
+
+Install Apache Spark on Windows 10 using prebuilt package
+If you do not want to run Apache Spark on Hadoop, then standalone mode is what you are looking for. Here are the steps to install and run Apache Spark on Windows in standalone mode.
+
+1. Java is a prerequisite for running Apache Spark. Install Java 7 or later. If not present, download   Java from here.
+
+2. Set JAVA_HOME and PATH variables as environment variables.
+
+3. Download Scala. Then execute the installer. Choose the first option of "Download Scala x.y.z. binaries for your system".
+
+4. Set the environment variables, SCALA_HOME to reflect the bin folder of downloaded scala directory. For example, if you have downloaded Scala in C:\scala directory then set
+
+SCALA_HOME=C:\scala
+PATH=C:\scala\bin
+
+Also, you can set _JAVA_OPTIONS environment variable to the value mentioned below to avoid any Java Heap Memory problems you encounter, if any.
+_JAVA_OPTIONS=-Xmx512M -Xms512M
+
+5. To check if Scala is working or not, run following command.
+
+>scala -version
+Picked up _JAVA_OPTIONS: -Xmx512M -Xms512M
+Scala code runner version 2.11.8 -- Copyright 2002-2016, LAMP/EPFL
+
+6. Spark can be installed in two ways.
+Building Spark using SBT 
+Use prebuilt Spark package
+Lets choose a Spark prebuilt package for Hadoop from here. Download and extract it to any drive.
+Set SPARK_HOME and PATH environment variable to the downloaded spark folder. For example, if you have downloaded Spark to C:\Spark\spark-1.6.1-bin-hadoop2.6 directory then  set
+
+SPARK_HOME=C:\spark\spark-1.6.1-bin-hadoop2.6
+PATH=C:\spark\spark-1.6.1-bin-hadoop2.6\bin
+
+7. Though we aren’t using Hadoop with Spark, but somewhere it checks for HADOOP_HOME variable in configuration. So to overcome this error, download winutils.exe and place it in any location.(for example,)
+Download winutils.exe for 64 bit.
+
+8. Set HADOOP_HOME to the path of winutils.exe. For example, if you install winutils.exe in  D:\winutils\bin\winutils.exe directory then set the path to
+HADOOP_HOME=D:\winutils
+
+Set PATH environment variable to include %HADOOP_HOME%\bin as follows
+PATH=D:\winutils\bin 
+
+9. Grant permissions to the folder C:\tmp\hive if you get any permissions error. \tmp\hive directory on HDFS should be writable. Use the below command to grant the privileges.
+
+D:\spark>D:\winutils\winutils.exe chmod 777 D:\tmp\hive
+
+10. For testing if Spark is working or not, you can run the example from the bin folder of Spark
+> bin\run-example SparkPi 10
+
+It should execute the program and will return Pi is roughly 3.14

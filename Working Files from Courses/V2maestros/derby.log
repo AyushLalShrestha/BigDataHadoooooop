@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Jul 13 08:26:57 NPT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-015d-39d3-0382-00001b254988 
+on database directory E:\CT Videos\Programming\Online Courses\Big Data and Data Mining Courses\Big Data Analytics with Apache Spark and Python\Working Files\RB-Python\metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@4d69dcfd 
+Loaded from file:/C:/spark/jars/derby-10.12.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_131-b11
+user.dir=E:\CT Videos\Programming\Online Courses\Big Data and Data Mining Courses\Big Data Analytics with Apache Spark and Python\Working Files\RB-Python
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
