@@ -1,0 +1,18 @@
+1. rows.map(lambda row: row[0]).distinct().count()
+	ans: 14031
+
+	2. B02764 = rows.filter(lambda row: "B02764" in row[0])
+
+3. B02764.count()
+	ans: 59
+
+4. B02764.filter(lambda line: int(line[3]) > 25000).count()
+	ans: 53
+
+5. filteredRows.map(lambda kp: (kp[0], int(kp[3]))).reduceByKey(lambda k,v: k+v).count()
+	ans: 6
+
+6. filteredRows.map(lambda kp: (kp[0], int(kp[3]))).reduceByKey(lambda k,v: k+v).collect()
+	ans: [(u'B02617', 725025), (u'B02682', 662509), (u'B02598', 540791), (u'B02765', 193670), (u'B02512', 93786), (u'B02764', 1914449)]
+
+ 	
