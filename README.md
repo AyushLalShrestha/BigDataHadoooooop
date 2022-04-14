@@ -1,2 +1,1 @@
-# BIgDataHadoooooop
-Resources relating to big data tutorials and learnings
+All learning resources references and bookmarks

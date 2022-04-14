@@ -1,0 +1,1 @@
+# ls, cat, ps, grep, find, nproc, ulimit and nano.
