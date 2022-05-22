@@ -24,7 +24,7 @@ Django & DRF specific
 - What is Nginx/gunicorn/wsgi & what advantages does it provide?
 - What are blueprint
 - Application context & request context
-
+- HTTP methods
 
 
 Generic Programming questions:

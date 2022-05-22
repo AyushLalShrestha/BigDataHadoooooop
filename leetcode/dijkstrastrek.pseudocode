@@ -1,0 +1,16 @@
+// Dijsktras
+
+// map of distance between each point
+
+// 	traversed: array - each node has node_name(distance, previous)
+// 	priority_queue: array - each node has node_name(distance, previous)
+
+// 	while priority_queue
+// 		Pick node of priority queue with the least distance
+// 		Find all the siblings of that node, range over all of it
+// 			If the node_distance + distance < sibling_distance
+// 				Update the sibling
+// 			if sibling not in traversed, update it to priority_queue
+// 		pop the node from priority_queue, add it to traversed
+		
+// 		continue while loop
