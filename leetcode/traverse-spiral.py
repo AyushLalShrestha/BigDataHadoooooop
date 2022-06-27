@@ -1,4 +1,3 @@
-
 from typing import List
 
 
@@ -17,7 +16,7 @@ class Solution:
         elif rows > 1:
             direction = "down"
         else:
-            return [matrix[0][0], ]
+            return [matrix[0][0],]
 
         while point:
             path.append(point)
@@ -30,7 +29,7 @@ class Solution:
                 if self.isValidPoint(rows, columns, path, *right_point):
                     next_point = right_point
                 else:
-                    down_point = [point[0]+1, point[1]]
+                    down_point = [point[0] + 1, point[1]]
                     if self.isValidPoint(rows, columns, path, *down_point):
                         direction = "down"
                         next_point = down_point
@@ -48,7 +47,7 @@ class Solution:
                 if self.isValidPoint(rows, columns, path, *left_point):
                     next_point = left_point
                 else:
-                    up_point = [point[0]-1, point[1]]
+                    up_point = [point[0] - 1, point[1]]
                     if self.isValidPoint(rows, columns, path, *up_point):
                         direction = "up"
                         next_point = up_point
@@ -71,16 +70,14 @@ class Solution:
         for i, j in path:
             final.append(matrix[i][j])
         return final
-       
+
 
 if __name__ == "__main__":
     solution = Solution()
-    matrix = [[1,2,3],[4,5,6],[7,8,9]]
-    matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+    matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+    matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
     matrix = [[1]]
-    matrix = [[3],[2]]
-    matrix = [[1,2,3,4,5]]
+    matrix = [[3], [2]]
+    matrix = [[1, 2, 3, 4, 5]]
     res = solution.spiralOrder(matrix)
     print(res)
-
-

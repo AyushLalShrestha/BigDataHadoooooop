@@ -1,3 +1,4 @@
+
 ROMAN_TO_DIGIT = {
     "I": 1,
     "V": 5,
@@ -5,18 +6,10 @@ ROMAN_TO_DIGIT = {
     "L": 50,
     "C": 100,
     "D": 500,
-    "M" :1000,
+    "M": 1000,
 }
 
-ROMAN_COMBO_TO_DIGIT = {
-    "IV": 4,
-    "IX": 9,
-    "XL": 40,
-    "XC": 90,
-    "CD": 400,
-    "CM": 900
-}
-
+ROMAN_COMBO_TO_DIGIT = {"IV": 4, "IX": 9, "XL": 40, "XC": 90, "CD": 400, "CM": 900}
 
 
 class Solution:
@@ -31,12 +24,8 @@ class Solution:
                     total += ROMAN_TO_DIGIT[s[0]]
                     s = s[1:]
         return total
-                    
-            
-            
-        
 
-        
+
 if __name__ == "__main__":
     roman_num = "MCMXCIV"
     roman_num = "LVIII"
