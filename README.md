@@ -1,1 +1,1 @@
-All learning resources references and bookmarks
+References & bookmarks for various articles for learning purpose.
