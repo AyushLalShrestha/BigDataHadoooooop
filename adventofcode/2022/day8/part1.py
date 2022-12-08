@@ -5,7 +5,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 
 def main():
     input_file_path = os.path.join(current_dir, "input.test")
-    # input_file_path = os.path.join(current_dir, "input")
+    input_file_path = os.path.join(current_dir, "input")
     _input = open(input_file_path, "r").read()
     rows = _input.split("\n")
 
@@ -18,39 +18,31 @@ def main():
 
             # Up
             if 0 <= i - 1 < len(rows):
-                val = rows[i - 1][j]
-                if val < elem:
-                    points_to_edge = [r[j] for r in rows[:i]][::-1]
-                    if all([p < elem for p in points_to_edge]):
-                        total_visible += 1
-                        continue
+                points_to_edge = [r[j] for r in rows[:i]][::-1]
+                if all([p < elem for p in points_to_edge]):
+                    total_visible += 1
+                    continue
 
             # Down
             if 0 <= i + 1 < len(rows):
-                val = rows[i + 1][j]
-                if val < elem:
-                    points_to_edge = [r[j] for r in rows[i + 1 :]]
-                    if all([p < elem for p in points_to_edge]):
-                        total_visible += 1
-                        continue
+                points_to_edge = [r[j] for r in rows[i + 1 :]]
+                if all([p < elem for p in points_to_edge]):
+                    total_visible += 1
+                    continue
 
             # left
             if 0 <= j - 1 < len(rows[0]):
-                val = row[j - 1]
-                if val < elem:
-                    points_to_edge = row[:j][::-1]
-                    if all([p < elem for p in points_to_edge]):
-                        total_visible += 1
-                        continue
+                points_to_edge = row[:j][::-1]
+                if all([p < elem for p in points_to_edge]):
+                    total_visible += 1
+                    continue
 
             # right
             if 0 <= j + 1 < len(rows[0]):
-                val = row[j + 1]
-                if val < elem:
-                    points_to_edge = row[j + 1 :]
-                    if all([p < elem for p in points_to_edge]):
-                        total_visible += 1
-                        continue
+                points_to_edge = row[j + 1 :]
+                if all([p < elem for p in points_to_edge]):
+                    total_visible += 1
+                    continue
 
     print(total_visible)
 
