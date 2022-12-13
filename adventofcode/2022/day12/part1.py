@@ -58,7 +58,6 @@ def main(input_lines):
         [start,]
     ]
     while possible_paths:
-        possible_paths = sorted(possible_paths)
         next_possible_paths = []
         for possible_path in possible_paths:
             last_point = possible_path[-1]
@@ -81,8 +80,8 @@ def main(input_lines):
 
 
 if __name__ == "__main__":
-    # input_file_path = os.path.join(current_dir, "input.test")
-    input_file_path = os.path.join(current_dir, "input")
+    input_file_path = os.path.join(current_dir, "input.test")
+    # input_file_path = os.path.join(current_dir, "input")
     _input = open(input_file_path, "r").read()
     input_lines = _input.split("\n")
 
